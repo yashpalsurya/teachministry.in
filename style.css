@@ -92,17 +92,14 @@ body {
       display: none;
     }
   
-    nav ul li {
-      display: block;
-      margin-bottom: 10px; /* Add space between navigation items */
-    }
+    
   
     .search-bar {
       margin-top: 20px; /* Add margin to separate search bar */
     }
   
     .search-bar input[type="text"] {
-      width: 100%; /* Take full width of the container */
+      width: 50%; /* Take full width of the container */
     }
 
     .container {
