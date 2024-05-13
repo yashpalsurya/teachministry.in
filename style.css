@@ -1,137 +1,138 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-}
-
-header {
-  background-color: #333;
-  color: #fff;
-  padding: 20px 0;
-}
-
-.container {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-h1 {
-  margin: 0;
-  font-size: 24px;
-}
-
-nav {
-  flex-grow: 1; /* Allow navigation to take remaining space */
-}
-
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  text-align: center; /* Center navigation items */
-}
-
-nav ul li {
-  display: inline;
-}
-
-nav ul li a {
-  color: #fff;
-  text-decoration: none;
-  padding: 10px;
-}
-
-nav ul li a:hover {
-  background-color: #555;
-}
-
-.search-bar {
-  display: flex;
-  align-items: center;
-}
-
-.search-bar input[type="text"] {
-  padding: 8px;
-  border-radius: 20px;
-  border: none;
-  margin-right: 10px;
-  width: 200px; /* Adjust width for smaller screens */
-}
-
-.search-bar button {
-  padding: 8px 15px;
-  background-color: #555;
-  color: #fff;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
-.search-bar button:hover {
-  background-color: #444;
-}
-
-/* Media query for smaller screens */
-@media screen and (max-width: 768px) {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+  }
+  
   .container {
-    flex-direction: column; /* Stack items vertically */
-    align-items: stretch;
-    text-align: center;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
-
+  
+  h1 {
+    margin: 0;
+    font-size: 24px;
+  }
+  
   nav {
-    margin-top: 20px; /* Add margin to separate navigation */
+    flex-grow: 1; /* Allow navigation to take remaining space */
   }
-
+  
   nav ul {
-    display: block;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center; /* Center navigation items */
   }
-
+  
   nav ul li {
-    display: block;
-    margin-bottom: 10px; /* Add space between navigation items */
+    display: inline;
   }
-
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+  }
+  
+  nav ul li a:hover {
+    background-color: #555;
+  }
+  
   .search-bar {
-    margin-top: 20px; /* Add margin to separate search bar */
+    display: flex;
+    align-items: center;
   }
-
+  
   .search-bar input[type="text"] {
-    width: 100%; /* Take full width of the container */
+    padding: 8px;
+    border-radius: 20px;
+    border: none;
+    margin-right: 10px;
+    width: 200px; /* Adjust width for smaller screens */
   }
-}
+  
+  .search-bar button {
+    padding: 8px 15px;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  
+  .search-bar button:hover {
+    background-color: #444;
+  }
+  
+  /* Media query for smaller screens */
+  @media screen and (max-width: 768px) {
+    .container {
+      flex-direction: column; /* Stack items vertically */
+      align-items: stretch;
+      text-align: center;
+    }
+  
+    nav {
+      margin-top: 20px; /* Add margin to separate navigation */
+    }
+  
+    nav ul {
+      display: block;
+    }
+  
+    nav ul li {
+      display: block;
+      margin-bottom: 10px; /* Add space between navigation items */
+    }
+  
+    .search-bar {
+      margin-top: 20px; /* Add margin to separate search bar */
+    }
+  
+    .search-bar input[type="text"] {
+      width: 100%; /* Take full width of the container */
+    }
+  }
+  
 
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f2f2f2;
-}
-
-.container {
-  max-width: 100%;
-  margin: 20px auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.card {
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin: 10px;
-  padding: 20px;
-  width: 300px;
-}
-
-.card h2 {
-  margin-top: 0;
-}
-
-.card p {
-  margin: 10px 0;
-}
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+  }
+  
+  .container {
+    max-width: 100%;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    width: 300px;
+  }
+  
+  .card h2 {
+    margin-top: 0;
+  }
+  
+  .card p {
+    margin: 10px 0;
+  }
+  
