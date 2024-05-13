@@ -11,6 +11,26 @@ const shayriData = [
       "जीवन के बगीचे में, नेहा फूल की तरह खिलती है,उसकी गरिमा और दया, किसी भी समय से ऊपर।जो भी कदम वह उठाती है, वह खुशी और उम्मीद बोती है,उसकी मौजूदगी में, हर पल अनमोल लगता है। ",
   },
   {
+    "poet": "Adarsh",
+    "shayri": "आदर्श की मुस्कान से रंगी है यह ज़िंदगी की चादर, उसकी आँखों में बसा हैं प्यार का समुंदर। हर ख्वाब हो उसके पास, आदर्श की हर मुस्कान पर खुशियों की बारिश हो बरसात।"
+  },
+  {
+    "poet": "Ajay",
+    "shayri": "अजय की मुस्कान से खिल उठता हर पल, उसकी आँखों में छुपी हैं प्यार की खुशियों की धार। प्यार की राहों में हम साथ चलें, अजय के साथ हमेशा हर पल हो खुशियों से भरा।"
+  },
+  {
+    "poet": "Kundan",
+    "shayri": "कुंदन की मुस्कान से रंगी है यह ज़िंदगी की चादर, उसकी आँखों में बसा हैं प्यार का समुंदर। हर ख्वाब हो उसके पास, कुंदन की हर मुस्कान पर खुशियों की बारिश हो बरसात।"
+  },
+  {
+    "poet": "Pavneet",
+    "shayri": "पवनीत की मुस्कान से खिल उठता हर पल, उसकी आँखों में छुपी हैं प्यार की खुशियों की धार। प्यार की राहों में हम साथ चलें, पवनीत के साथ हमेशा हर पल हो खुशियों से भरा।"
+  },
+  {
+    "poet": "Abhishek",
+    "shayri": "अभिषेक की मुस्कान से रंगी है यह ज़िंदगी की चादर, उसकी आँखों में बसा हैं प्यार का समुंदर। हर ख्वाब हो उसके पास, अभिषेक की हर मुस्कान पर खुशियों की बारिश हो बरसात।"
+  },
+  {
     poet: "Karan",
     shayri:
       "मेरे दिल के सितारों में बसा है तेरा नाम, तेरे बिना मेरी दुनिया खो गई है कहाँ। तेरी हंसी की मिठास से सजती है ज़िंदगी, तेरी यादों में खो जाता हूँ हर रात की तन्हाई। तू है मेरी आसमानी कविता की पहली कड़ी, तेरे साथ हर पल होता है, एक नया संवाद, एक नया अनुभव।",
@@ -444,6 +464,11 @@ const shayriData = [
     shayri:
       "Gulon mein rang bhare, baad-e-naubahaar chale, Chale bhi aao ke gulshan ka karobaar chale.",
   },
+  {
+    poet: "Ankita",
+    shayri:
+      "Gulon mein rang bhare, baad-e-naubahaar chale, Chale bhi aao ke gulshan ka karobaar chale.",
+  },
 ];
 
 const cardContainer = document.getElementById('cardContainer');
@@ -540,4 +565,12 @@ searchInput.addEventListener('keypress', (event) => {
 // Display all shayri initially
 displayAllShayri();
 
+
+function filterShayri(searchTerm) {
+  const filteredShayri = shayriData.filter(shayri => {
+    return (shayri.poet && shayri.poet.toLowerCase().includes(searchTerm.toLowerCase())) ||
+           shayri.shayri.toLowerCase().includes(searchTerm.toLowerCase());
+  });
+  displayFilteredShayri(filteredShayri);
+}
 
