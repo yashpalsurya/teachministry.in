@@ -122,6 +122,7 @@ body {
     
     .card h2 {
       margin-top: 0;
+      text-transform: capitalize;
     }
     
     .card p {
