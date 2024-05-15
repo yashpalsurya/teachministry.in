@@ -1173,3 +1173,25 @@ function filterShayri(searchTerm) {
   });
   displayFilteredShayri(filteredShayri);
 }
+
+
+
+
+// Disable right-click
+document.addEventListener('contextmenu', function(event) {
+  event.preventDefault();
+});
+
+// Disable keyboard shortcuts
+document.onkeydown = function(event) {
+  if (
+    event.ctrlKey &&
+    (event.keyCode === 67 || // Ctrl+C
+    event.keyCode === 85 || // Ctrl+U
+    event.keyCode === 83 || // Ctrl+S
+    event.keyCode === 73 || // Ctrl+Shift+I
+    event.keyCode === 123) // F12
+  ) {
+    return false;
+  }
+};
