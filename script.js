@@ -1713,7 +1713,6 @@ const shayriData = [
 
 const cardContainer = document.getElementById("cardContainer");
 const searchInput = document.getElementById("searchInput");
-const searchButton = document.getElementById("searchButton");
 
 // Sort the shayriData array alphabetically by poet's name
 shayriData.sort((a, b) => a.poet.localeCompare(b.poet));
@@ -1783,15 +1782,40 @@ function copyShayri(text, button) {
   button.textContent = "Shayri Copied!";
 }
 
-// Event listener for search button
-searchButton.addEventListener("click", () => {
-  const searchTerm = searchInput.value.trim();
+// Autocomplete functionality
+searchInput.addEventListener("input", () => {
+  const searchTerm = searchInput.value.trim().toLowerCase();
   if (searchTerm !== "") {
-    filterShayri(searchTerm);
+    const suggestions = shayriData
+      .filter((shayri) => 
+        shayri.poet.toLowerCase().includes(searchTerm) ||
+        shayri.shayri.toLowerCase().includes(searchTerm))
+      .map((shayri) => shayri.poet + ": " + shayri.shayri);
+
+    // Display autocomplete suggestions
+    showAutocompleteSuggestions(suggestions);
   } else {
     displayAllShayri();
   }
 });
+
+// Function to show autocomplete suggestions
+function showAutocompleteSuggestions(suggestions) {
+  const autocompleteList = document.getElementById("autocomplete-list");
+  autocompleteList.innerHTML = "";
+
+  suggestions.forEach((suggestion) => {
+    const suggestionItem = document.createElement("div");
+    suggestionItem.classList.add("autocomplete-item");
+    suggestionItem.textContent = suggestion;
+    suggestionItem.addEventListener("click", () => {
+      searchInput.value = suggestion;
+      filterShayri(suggestion);
+      autocompleteList.innerHTML = "";
+    });
+    autocompleteList.appendChild(suggestionItem);
+  });
+}
 
 // Event listener for Enter key press on search input
 searchInput.addEventListener("keypress", (event) => {
@@ -1802,22 +1826,12 @@ searchInput.addEventListener("keypress", (event) => {
     } else {
       displayAllShayri();
     }
+    document.getElementById("autocomplete-list").innerHTML = "";
   }
 });
 
 // Display all shayri initially
 displayAllShayri();
-
-function filterShayri(searchTerm) {
-  const filteredShayri = shayriData.filter((shayri) => {
-    return (
-      (shayri.poet &&
-        shayri.poet.toLowerCase().includes(searchTerm.toLowerCase())) ||
-      shayri.shayri.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-  });
-  displayFilteredShayri(filteredShayri);
-}
 
 // Disable right-click
 document.addEventListener("contextmenu", function (event) {
